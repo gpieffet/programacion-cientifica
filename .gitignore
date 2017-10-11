@@ -3,4 +3,7 @@
 *.log
 *.out
 *.synctex.gz
-#Taller\ [2-5]
+*.lb
+# Taller\ 3
+sccluster
+sccluster.tgz
