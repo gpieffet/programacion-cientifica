@@ -1,0 +1,17 @@
+#!/bin/bash
+
+USER=bioquimstud$1
+#REMOTE_DIR=/home/$USER
+REMOTE_DIR=/export/home/bioquimica
+CLUSTER_IP=186.28.225.59
+SSH_OPT="-Y -o ServerAliveInterval=300 -o ConnectTimeout=90"
+
+if [ $# -eq 1 ] ; then
+	echo "ssh ${SSH_OPT} -l $USER ${CLUSTER_IP} (SC cluster: CICBA.uan.edu.co)"
+	env TERM=xterm-color ssh ${SSH_OPT} -l $USER ${CLUSTER_IP}
+else
+	echo "scp $2" 
+	echo "${CLUSTER_IP}:$REMOTE_DIR (CICBA.uan.edu.co)"
+	echo ""
+	scp $2 ${USER}@${CLUSTER_IP}:$REMOTE_DIR
+fi

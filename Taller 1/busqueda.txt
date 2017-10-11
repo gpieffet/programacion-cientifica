@@ -1,0 +1,11 @@
+1. Si esta leyendo este archivo con un editor de texto, cierrelo y en vez de eso utilice el terminal con el comando "cat" o "less":
+	cat busqueda.txt
+2. Si no bajo estos archivos en su carpeta home (por ejemplo si los bajo en Download), muevalos allí (es decir en /home/guest):
+	mv busqueda* /home/guest (o mv busqueda* ~)
+	(si los bajo directamente en su carpeta home, no tiene nada que hacer: pase al paso siguiente)
+3. Ir a su carpeta home:
+	cd ~
+	(si se encuentra en su carpeta home, no tiene nada que hacer)
+4. Entrar lo siguiente para descomprimir el archivo busqueda.tgz:
+	tar zxvf busqueda.tgz &> /dev/null 
+5. Apareció una nueva carpeta Busqueda_del_Tesoro, entre en esa carpeta y siga las instrucciones que encuentra allá
