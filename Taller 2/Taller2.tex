@@ -1,0 +1,170 @@
+\documentclass[10pt, twocolumn]{article}
+%\documentclass[prd,amssymb,preprint]{revtex4}
+\setlength{\topmargin}{-0.5in}
+\setlength{\oddsidemargin}{-0.4in} 
+\setlength{\textwidth}{7.3in}
+\setlength{\textheight}{9.0in}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{nicefrac}
+\usepackage{verbatim}
+
+\pagestyle{empty}		% Remove page number
+
+\begin{document}
+
+\noindent
+{\Large \bf Programación Científica 1}
+\vskip 0.3cm
+\noindent
+{\large \bf Taller 2: {\it Operadores, expresiones y variables.}}
+\vskip 0.2cm
+\noindent
+% {\it Temas: Operadores, expresiones y variables.}\\
+{\it Profesores:  Gilles Pieffet}\\
+
+
+{\bf 1ra Parte.} Valores y Operadores.
+\begin{enumerate}
+
+% Pregunta 1
+% \item first item
+\item Entrar lo siguiente en un archivo (utilice sublime text with \emph{stext}) y guardarlo como ``ej1\_operadores.py'' (sin las comillas) antes de correrlo (\textbf{ctrl-b}):
+\begin{verbatim}
+	print "Voy a contar mis pollos:"
+	
+	print "Gallina", 25 + 30 / 6
+	print "Gallo", 100 - 25 * 3 % 4
+	
+	print ""
+	print "Ahora voy a contar los huevos:"
+	print 3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6
+\end{verbatim}
+Nota: corra el programa y mire bien lo que hace antes de seguir con el 2$^{do}$ punto.
+
+% Pregunta 2
+\item Ahora vamos a utilizar un carácter especifico al español. En el mismo archivo añade al final las lineas siguientes, y intente correr el programa de nuevo. Que pasa?
+\begin{verbatim}
+	print ""
+	print "Ahora voy a contar piñas:"
+	print "No, piñas no."
+\end{verbatim}
+
+Se puede arreglar el error colocando la linea siguiente al principio del archivo (en la  primera línea):
+\begin{verbatim}
+	# -*- coding: utf-8 -*-
+\end{verbatim}
+y luego una ``u'' al frente de todas las cadenas que contienen caracteres ofensivos:
+\begin{verbatim}
+	print u"Ahora voy a contar piñas:"
+\end{verbatim}
+Intenta de correr el programa de nuevo. Que pasa?
+
+% Pregunta 3
+\item Ahora escribe lo siguiente y corra el programa.
+\begin{verbatim}
+	print ""
+	print "Es cierto que 3 + 2 < 5 - 7?"
+	print 3 + 2 < 5 - 7
+
+	print ""
+	print "Que vale 3 + 2?", 3 + 2
+	print "Que vale 5 - 7?", 5 - 7
+	print "Oh, por eso es incorrecto (False)."
+
+	print ""
+	print "Unos mas."
+	print "Es mas grande?", 5 > -2
+	print "Es mas grande o igual?", 5 >= -2
+	print "Es menos o igual?", 5 <= -2
+\end{verbatim}
+Que nuevos valores aparecieron? A que tipo pertenecen?
+
+\item Prioridad de los operadores. Si un circulo tiene una circunferencia $l$ igual a 50 cm, > cual es el radio $r$?
+
+\item División entera. The volume of a sphere of radius $r$ is $\frac43 \pi r^3$. What is the volume of a sphere of radius $5$?
+
+\item Asumiendo que hacemos las asignaciones siguientes:
+\begin{verbatim}
+	width = 17
+	height = 12.0
+	delimiter = '.'
+\end{verbatim}
+Para cada una de las expresiones que sigue, escribir el valor de la expresión y el tipo (del resultado) ANTES de correr el código. Luego verifique sus respuestas con el interpretador (ipython) o desde el editor de texto (stext).
+\begin{verbatim}
+	1. width/2
+	2. width/2.0
+	3. height/3
+	4. 1 + 2 * 5
+	5. delimiter * 5
+\end{verbatim}
+
+
+\vspace{5mm}
+% \newpage
+{\bf 2da Parte.} Variables y strings.
+\item Un programa sencillo con variables. Guarde lo siguiente en un archivo ``ej2\_variables.py'' antes de correrlo.
+\begin{verbatim}
+	my_name = 'escribe su nombre'
+	my_age = escribe su edad (numero)
+	my_height = escribe su altura (numero) # metros
+	my_weight = escribe su peso (numero)	# kg
+	my_eyes = 'color de los ojos'
+	my_hair = 'color del cabello'
+	
+	print "Let's talk about", my_name
+	print "He/she has a height (in meter) of", my_height
+	print "He/she has a weight (in kg)", my_weight
+	print "Actually that's not too heavy."
+	print "His/her eyes are", my_eyes
+	print "and his/her hair is", my_hair
+
+	print "If I add my age, my height and my weight	it all add up to", my_age + my_height + my_weight
+\end{verbatim}
+
+\item Debugging. Corregir los errores en las siguientes expresiones y escribir en un comentario cual era la razón por el error en cada uno de los casos:
+\begin{verbatim}
+	precio carro = 20000000
+	#--- Error: 
+	
+	no_libros = 3
+	precio_libro = 15000
+	precio_total = no_libro * precio_libro
+	#--- Error: 
+	
+	latex = "LaTeX is a publishing software!"
+	print "What is LaTeX?", LaTeX
+	#--- Error: 
+	
+	altura1 = 10
+	longitud2 = 5
+	3area = altura1 * longitud2
+	#--- Error: 
+
+	students = 25
+	class = 3
+	total_students = students * class
+	#--- Error: 
+\end{verbatim}
+
+\item Format string (formato de cadenas). Vamos a utilizar las mismas variables que en el programa ``ej2\_variables.py'', pero ahora vamos a incluir las variables adentro de los \emph{strings} (a través de los formatos de los tipos correspondientes) cuando utilizamos las declaraciones \emph{print}.
+\begin{verbatim}
+	print "Let's talk about %s." % my_name
+	print "He's %f m tall." % my_height
+	print "He's %d year old." % my_age
+	print "He's %f kg heavy." % my_weight
+	print "Actually that's not too heavy."
+	print "His weight to height ratio is %.2f kg/m"	% (my_weight/my_height)
+	print "He has %s eyes and %s hair." % (my_eyes	,my_hair)
+	
+	# this line is tricky, be careful 
+	print "If I add %f, %r, and %d I get %r" % (my_	age, my_height, my_weight, my_age + my_height +	my_weight)
+\end{verbatim}
+
+\end{enumerate}
+\end{document}
+
