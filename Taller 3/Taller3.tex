@@ -1,0 +1,102 @@
+\documentclass[10pt, twocolumn]{article}
+%\documentclass[prd,amssymb,preprint]{revtex4}
+\setlength{\topmargin}{-0.5in}
+\setlength{\oddsidemargin}{-0.4in} 
+\setlength{\textwidth}{7.3in}
+\setlength{\textheight}{9.0in}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{nicefrac}
+\usepackage{verbatim}
+
+\pagestyle{empty}		% Remove page number
+
+\begin{document}
+
+\noindent
+{\Large \bf Programación Científica 1}
+\vskip 0.3cm
+\noindent
+{\large \bf Taller 3: {\it Funciones.}}
+\vskip 0.2cm
+\noindent
+% {\it Temas: Operadores, expresiones y variables.}\\
+{\it Profesores:  Gilles Pieffet}\\
+
+
+% {\bf 1ra Parte.} Valores y Operadores.
+\noindent
+Los programas del taller se pueden guardar en un archivo ``ej3\_funciones.py'', cada nuevo punto separado e indicado por un comentario:
+	\begin{verbatim}
+		########### Punto 1
+		... código Punto 1
+		
+		########### Punto 2
+		... código Punto 2
+	\end{verbatim}
+	
+\begin{enumerate}
+
+	\item {\bf Función \emph{raw\_input()}}. Escribe un programa para calcular el volumen de una esfera ($V = \frac43 \pi r^3$) de radio $r$ (básicamente el mismo problema que en el ejercicio 5 del taller 2), solo que esta vez $r$ no está predefinido directamente adentro del programa pero hay que pedirlo de manera interactiva utilizando la función \emph{raw\_input()}. Para que el programa funcione de manera adecuada \emph{tiene} que correrlo desde el terminal. Escribe el resultado con un formato de cadena para poder specificar las unidades: el radio $r$ y el volumen $V$ se pueden escribir en cm y cm$^3$, respectivamente.\\ 
+Utilice el programa para calcular el volumen de las esferas con radio $r = 1\;\rm{mm}, 2\;\rm{cm}$ y $15$ cm.\\
+{\bf Nota 1:} Cuidado con el tipo del valor de retorno de \emph{raw\_input()}.\\
+{\bf Nota 2:} Es una buena idea indicar cual es el dato que el programa está esperando.
+
+	\item Ahora vuelven a escribir el mismo programa, pero definiendo una función $volumen\_esf()$ que recibe como argumento el radio $r$ y que tiene como valor de retorno el volumen $V$ de la esfera. Utilice el valor de pi definido en el modulo \emph{math}.
+
+		\item Escribe 2 funciones: la primera, \emph{grados()}, para convertir ángulos de radianes a grados (la función recibe un ángulo en radianes y tiene como valor de retorno el mismo ángulo en grados) y la segunda, \emph{radianes()} para convertir ángulos de grados a radianes (lo mismo que antes pero al revés).\\
+Verifique los resultados de las funciones con los ejemplos siguientes:
+	\begin{verbatim}
+		print grados(pi)
+		print grados(pi/2)
+		print grados(pi/6)
+		print radianes(180)
+		print radianes(360)
+		print grados(radianes(180))
+		print grados(radianes(30))
+		print radianes(grados(pi))
+		print radianes(grados(pi/2))
+	\end{verbatim}
+	\item Python proporciona una función incorporada que se llama \emph{len} que devuelva la longitud (es decir el numero de caracteres) de una cadena, así que \emph{len('allen')} es igual a 5.\\
+	Escribe una función \emph{alinear\_derecha} que recibe una cadena \emph{s} como argumento y imprime la cadena con suficientes espacios antes de tal manera que la ultima letra de la cadena se encuentra en la columna 70 del terminal. 
+	\begin{verbatim}
+		>>> alinear_derecha('Gilles')
+		                                        Gilles
+	\end{verbatim}
+Escribe los ejemplos siguientes para verificar que la función funciona correctamente:
+	\begin{verbatim}
+		alinear_derecha('Gilles')
+		alinear_derecha('Tim Burton')
+		alinear_derecha('James Rodriguez')
+		alinear_derecha('El conejito magico')
+		alinear_derecha(raw_input())
+	\end{verbatim}
+
+\item Un objeto función es un valor que se puede asignar a una variable o pasar como argumento. Por ejemplo \emph{duplicar} es una función que recibe un objeto función como argumento y la llama dos veces.
+	\begin{verbatim}
+		def duplicar(f):
+		    f()
+		    f()
+	\end{verbatim}
+Aquí es un ejemplo que utiliza \emph{duplicar} para llamar una función \emph{imprimir\_spam} dos veces:
+	\begin{verbatim}
+		def imprimir_spam():
+		    print 'spam'
+		
+		duplicar(print_spam)
+	\end{verbatim}
+\begin{enumerate}
+	\item Escribe este ejemplo y pruebalo.
+	\item Escribe una versión mas general de \emph{imprimir\_spam} llamada \emph{imprimir\_2veces} que recibe una cadena como argumento y la imprime dos veces.
+	\item Modificar \emph{duplicar} de tal manera que reciba 2 argumentos, un objeto función y un valor y que llame la función 2 veces, pasandole el valor como argumento.
+	\item Utilice la versión modificada de \emph{duplicar} para llamar \emph{imprimir\_2veces} dos veces, pasando 'spam' como argumento.
+	\item Definir una nueva función \emph{cuadruplicar} que recibe una función como argumento y la llame 4 veces, pero de tal manera que el cuerpo de la función \emph{cuadruplicar} solo contenga 2 instrucciones.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+
