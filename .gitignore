@@ -4,6 +4,6 @@
 *.out
 *.synctex.gz
 *.lb
-# Taller\ 3
+git-clone
 sccluster
 sccluster.tgz
