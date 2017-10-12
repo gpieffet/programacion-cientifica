@@ -38,16 +38,17 @@ para cualquier valor de n mayor a 2.
 	\[ a^n + b^n = c^n \]
 	el programar debe imprimir en la pantalla ``Oye, Fermat estaba equivocado!''. Si no, el programa debe imprimir ``No, la igualdad no funciona''.
 	\item Escribe una función que pide al usuario los valores \emph{a}, \emph{b}, \emph{c} y \emph{n}, los convierte en \emph{int} y llama a \emph{chequear\_fermat} para ver si están en acuerdo con el teorema de Fermat.
+	\item Modifique la función \emph{chequear\_fermat} de tal manera que verifique que \emph{n} es mayor a 2 (antes de chequear si el teorema de Fermat es valido).
 \end{enumerate}
 
-	\item Si tiene $3$ palitos, es posible que no sea posible de organizarlos en un triángulo. Por ejemplo, si uno de los palitos tiene una longitud de $12$ cm y los otros dos tienen un longitud de $3$ cm, es muy claro que los dos pequeños palos no se van a poder tocar. Para tres longitudes cualquiera, hay un test muy sencillo para ver si pueden formar un triángulo:\\
+	\item Si tiene tres palitos, no es siempre posible organizarlos en un triángulo. Por ejemplo, si uno de los palitos tiene una longitud de $12$ cm y los otros tienen un longitud de $3$ cm cada uno, es muy claro que los dos pequeños palos no se van a poder tocar. Con tres longitudes cualquiera, hay un test muy sencillo para ver si pueden formar un triángulo:\\
 	\vskip -4mm
-	\emph{Si una de las longitudes es mayor a la suma de las dos otras, no se puede formar un triángulo. De lo contrario es posible formar uno (si la suma de $2$ longitudes es igual a la tercera, se forma lo que se llama un triángulo degenerado).}
+	\emph{Si una de las longitudes es mayor a la suma de las dos otras, no se puede formar un triángulo. De lo contrario, es posible formar uno (si la suma de dos longitudes es igual a la tercera, se forma lo que se llama un triángulo degenerado).}
 	\begin{enumerate}
-		\item Escribe una función llamada \emph{es\_triangulo} que recibe 3 números enteros como argumentos, y que imprime ``Si'' o ``No'' dependiendo de si se puede formar un triángulo con palos con estas $3$ longitudes. 
-		\item Ahora, haga la distinción si el triángulo esta degenerado y en este caso imprima ``Si, pero degenerado''. Escribe la expresión condicional que va a evaluar la condición de tal manera que chequea si dos lados son igual al tercero.
-		\item Haga lo mismo pero de tal manera que la expresión condicional chequea si dos lados \textbf{NO} son iguales al tercero. 
-		\item Escribe una función que le pide al usuario las tres longitudes de los palos y utiliza \emph{es\_triangulo} para chequear si se puede formar un triángulo con palitos con estas $3$ longitudes.
+		\item Escribe una función llamada \emph{es\_triangulo} que recibe tres números enteros como argumentos, y que imprime ``Si'' o ``No'' dependiendo de si se puede formar un triángulo con tres palos con estas longitudes. 
+		\item Modifique el programa para tener en cuenta el caso en el cual el triángulo es degenerado. En este caso imprima ``Si, pero es degenerado'' en vez de simplemente ``Si''. Escribe la expresión condicional de tal manera que chequee si dos lados juntos son iguales al tercero.
+		\item Haga lo mismo que en \emph{(b)} pero de tal manera que la expresión condicional chequee si dos lados juntos \textbf{NO} son iguales al tercero. 
+		\item Escribe una función que le pide al usuario las tres longitudes y utiliza \emph{es\_triangulo} para chequear si se puede formar un triángulo con tres palitos con estas longitudes.
 	\end{enumerate}
 
 
