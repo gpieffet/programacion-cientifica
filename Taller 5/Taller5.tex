@@ -20,11 +20,11 @@
 {\Large \bf Programación Científica 2}
 \vskip 0.3cm
 \noindent
-{\large \bf Taller 5: {\it Condiciones, Flujo de control y Recursión}}
+{\large \bf Taller 5: {\it Condiciones y Flujo de control}}
 \vskip 0.2cm
 \noindent
 % {\it Temas: Operadores, expresiones y variables.}\\
-{\it Profesores:  Gilles Pieffet}\\
+{\it Profesor:  Gilles Pieffet}\\
 
 
 % {\bf 1ra Parte.} Condicionales
@@ -41,18 +41,51 @@ para cualquier valor de n mayor a 2.
 	\item Modifique la función \emph{chequear\_fermat} de tal manera que verifique que \emph{n} es mayor a 2 (antes de chequear si el teorema de Fermat es valido).
 \end{enumerate}
 
-	\item Si tiene tres palitos, no es siempre posible organizarlos en un triángulo. Por ejemplo, si uno de los palitos tiene una longitud de $12$ cm y los otros tienen un longitud de $3$ cm cada uno, es muy claro que los dos pequeños palos no se van a poder tocar. Con tres longitudes cualquiera, hay un test muy sencillo para ver si pueden formar un triángulo:\\
+\item Si tiene tres palitos, no es siempre posible organizarlos en un triángulo. Por ejemplo, si uno de los palitos tiene una longitud de $12$ cm y los otros tienen un longitud de $3$ cm cada uno, es muy claro que los dos pequeños palos no se van a poder tocar. Con tres longitudes cualquiera, hay un test muy sencillo para ver si pueden formar un triángulo:\\
 	\vskip -4mm
 	\emph{Si una de las longitudes es mayor a la suma de las dos otras, no se puede formar un triángulo. De lo contrario, es posible formar uno (si la suma de dos longitudes es igual a la tercera, se forma lo que se llama un triángulo degenerado).}
-	\begin{enumerate}
-		\item Escribe una función llamada \emph{es\_triangulo} que recibe tres números enteros como argumentos, y que imprime ``Si'' o ``No'' dependiendo de si se puede formar un triángulo con tres palos con estas longitudes. 
-		\item Modifique el programa para tener en cuenta el caso en el cual el triángulo es degenerado. En este caso imprima ``Si, pero es degenerado'' en vez de simplemente ``Si''. Escribe la expresión condicional de tal manera que chequee si dos lados juntos son iguales al tercero.
-		\item Haga lo mismo que en \emph{(b)} pero de tal manera que la expresión condicional chequee si dos lados juntos \textbf{NO} son iguales al tercero. 
-		\item Escribe una función que le pide al usuario las tres longitudes y utiliza \emph{es\_triangulo} para chequear si se puede formar un triángulo con tres palitos con estas longitudes.
-	\end{enumerate}
+\begin{enumerate}
+	\item Escribe una función llamada \emph{es\_triangulo} que recibe tres números enteros como argumentos, y que imprime ``Si'' o ``No'' dependiendo de si se puede formar un triángulo con tres palos con estas longitudes. 
+	\item Modifique el programa para tener en cuenta el caso en el cual el triángulo es degenerado. En este caso imprima ``Si, pero es degenerado'' en vez de simplemente ``Si''. Escribe la expresión condicional de tal manera que chequee si dos lados juntos son iguales al tercero.
+	\item Haga lo mismo que en \emph{(b)} pero de tal manera que la expresión condicional chequee si dos lados juntos \textbf{NO} son iguales al tercero. 
+	\item Escribe una función que le pide al usuario las tres longitudes y utiliza \emph{es\_triangulo} para chequear si se puede formar un triángulo con tres palitos con estas longitudes.
+\end{enumerate}
+
+\item {\textbf{Adivina el numero.}} Tiene que escribir un juego en el cual el computador \emph{piensa} un numero de $1$ a $20$, y tiene $4$ intentos para adivinar el numero correcto. Abajo es lo que aparece cuando el programa está corriendo. Lo que entra el usuario está indicado con letras negrillas.
+\vskip 1mm
+Hola! Cual es tu nombre?\\
+\textbf{Paloma}\\
+Bueno Paloma, estoy pensando en un numero de $1$ a $20$.\\
+Adivina cuál es.\\
+\textbf{10}\\
+No. Eso era el intento 1.\\
+Adivina cuál es.\\
+\textbf{15}\\
+No. Eso era el intento 2.\\
+Adivina cuál es.\\
+\textbf{7}\\
+Buen trabajo, Paloma. Encontraste mi número en 3 intentos.
+
+Si no se encuentra el numero en cuatro intentos, lo que aparece después del cuarto intento es:\\
+No. Eso era el intento 4.\\
+El numero que tenia en la mente era el 14
+
+Nota 1: Para que el computador escoja un numero al azar tenemos que utilizar una función que genera un numero aleatorio: la función \emph{randint} del \underline{modulo} \emph{random}. Para utilizarla, se le pasa como argumentos el primero y el ultimo numero (los limites) del rango que nos interesa, y la función devuelva un numero adentro de este rango.
+\vspace{-3mm}
+\begin{verbatim}
+randint(1, 20)	-> numero entre 1 y 20
+\end{verbatim}
+
+Nota 2: Para salir de un bucle de manera anticipada (por ejemplo si se cumple una condición externa), se utiliza la instrucción \emph{break}.
+
+Nota 3: Cuando está probando el programa, con el fin de evitar la demora asociada con la entrada manual de datos, puede utilizar valores predefinidas o que se inicializan automáticamente.
+
+\item {\textbf{Adivina el numero v2.}} Para ayudar el jugador a encontrar el numero correcto, indica para cada intento si su numero es mas grande o mas pequeño que el numero a encontrar:\\
+Adivina cual es.\\
+\textbf{18}\\
+Su numero es mas grande.
 
 
-% 	\begin{verbatim}
 % 		$ ssh -Y -o ServerAliveInterval=300 -o	ConnectTimeout=90 -l bioquimstud? 186.28.225.59
 % 	\end{verbatim}
 % donde el $?$ corresponde a su posición en la lista de estudiantes:
