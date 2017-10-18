@@ -95,4 +95,58 @@ def obtener_valor():
     c = raw_input('Valor de c: ')
     es_triangulo_c(int(a), int(b), int(c))
     
-obtener_valor()
+# obtener_valor()
+
+
+# Punto 3a
+# from random import randint
+#
+# print 'Hola, Cual es tu nombre?'
+# nombre = 'Paloma'
+# print nombre
+# # nombre = raw_input('Hola, Cual es tu nombre?\n')
+# print 'Bueno %s, estoy pensando en un numero de 1 a 20.' % nombre
+# numero = randint(1, 20)
+#
+# for i in range(4):
+#     print 'Adivina cual es.'
+#     intento = randint(1, 20)
+#     print intento
+#     # intento = int(raw_input('Adivina cual es.\n'))
+#     if numero != intento:
+#         print 'No. Eso era el intento %d' % (i+1)
+#     else:
+#         print 'Buen trabajo, %s. Encontraste mi numero en %d intento(s)' % (nombre, i+1)
+#         break
+#
+# if numero != intento:
+#     print 'El numero que tenia en la mente era el %d' % numero
+
+
+# Punto 3b
+from random import randint
+
+# print 'Hola, Cual es tu nombre?'
+# nombre = 'Paloma'
+# print nombre
+nombre = raw_input('Hola, Cual es tu nombre?\n')
+print 'Bueno %s, estoy pensando en un numero de 1 a 20.' % nombre
+numero = randint(1, 20)
+
+for i in range(4):
+    # print 'Adivina cual es.'
+    # intento = randint(1, 20)
+    # print intento
+    intento = int(raw_input('Adivina cual es.\n'))
+    if numero < intento:
+        print 'Su numero mas grande.'
+    elif numero > intento:
+        print 'Su numero mas pequeno.'
+    else:
+        break
+
+if numero == intento:
+    print 'Buen trabajo, %s. Encontraste mi numero en %d intento(s)' % (nombre, i+1)
+else:
+    print 'El numero que tenia en la mente era el %d' % numero 
+
